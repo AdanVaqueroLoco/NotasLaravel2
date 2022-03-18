@@ -2,6 +2,7 @@
 
 use Illuminate\Support\facades\Route;
 use Illuminate\Support\facades\DB;
+use Illuminate\Http\Request;
 use App\Notas;
 
 /*
@@ -32,6 +33,16 @@ Route::get('agregar', function () {
 Route::get('editar', function () {
     return view('editar');
 });
+
+Route::post('crear', function (Request $request){
+    Notas::create([
+        'titulo' => $request->input('title'),
+        'contenido' =>$request->input('content'),
+    ]);
+
+    return redirect('/notas');
+
+})->name('notas.store');
 
 // Route::get('notas', function(){
 //     return 'Aqui estara nuestro listado de notas';

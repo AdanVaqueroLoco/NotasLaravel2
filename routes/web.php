@@ -3,7 +3,7 @@
 use Illuminate\Support\facades\Route;
 use Illuminate\Support\facades\DB;
 use Illuminate\Http\Request;
-use App\Notas;
+use App\Models\Notas;
 
 /*
 |--------------------------------------------------------------------------

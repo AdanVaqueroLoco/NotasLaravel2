@@ -39,4 +39,9 @@ Clase NotasController extends Controllers
         return view('editar', ['notas' => $notas]);
         //return 'Aqui se van a editar las notas: '.$id;
     }
+
+    public function update($id){
+
+        return "Vista de edición funcionando"
+    }
 }

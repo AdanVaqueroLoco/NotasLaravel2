@@ -40,8 +40,22 @@ Clase NotasController extends Controllers
         //return 'Aqui se van a editar las notas: '.$id;
     }
 
-    public function update($id){
+    public function update(Notas $notas, Request $request){
 
-        return "Vista de edición funcionando"
+        $notas->update([
+                'titulo' => $request->input('title'),
+                'contenido' => $request->input('content'),
+            ]);
+
+        return redirect('/notas');
+    }
+
+    public function destroy($id)
+    {
+        $notas = Notas::find($id);
+
+        $notas->delete();
+
+        return redirect('/');
     }
 }

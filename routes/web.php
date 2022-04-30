@@ -38,4 +38,6 @@ Route::get('contactos', 'App\Http\Controllers\NotasController@contactos');
 
 Route::get('notas/{id}/editar', 'App\Http\Controllers\NotasController@editarnotas')->name('notas.edit');
 
-Route::put('notas/{id}/editar', 'App\Http\Controllers\NotasController@update')->('notas.update');
+Route::put('notas/{notas}/editar', 'App\Http\Controllers\NotasController@update')->('notas.update');
+
+Route::delete('notas/{id}', 'App\Http\Controllers\NotasController@destroy')->name('notas.destroy');
